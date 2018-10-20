@@ -148,7 +148,7 @@ def team_names
 end
 
 def player_numbers(team)
-  game_hash.collect do |court, team_data|
+  game_hash.each do |court, team_data|
     if team_data[:team_name] == team
       team_data[:players].collect do |name, stats|
         stats[:number]
