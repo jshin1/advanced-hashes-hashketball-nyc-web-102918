@@ -148,13 +148,15 @@ def team_names
 end
 
 def player_numbers(team)
+  list_of_numbers = []
   game_hash.each do |court, team_data|
     if team_data[:team_name] == team
-      team_data[:players].collect do |name, stats|
-        stats[:number]
+      team_data[:players].each do |name, stats|
+        list_of_numbers << stats[:number]
       end
     end
   end
+  list_of_numbers
 end
 
 def player_stats(player)
